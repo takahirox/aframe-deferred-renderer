@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Deferred Renderer</title>
+    <meta name="description" content="A-Frame Deferred Renderer">
+    <script>
+    /*
+    var WebVRConfig = {
+        FORCE_ENABLE_VR: true,
+        BUFFER_SCALE: 1.0
+    };
+    */
+    </script>
+    <script src="https://cdn.rawgit.com/aframevr/aframe/v0.4.0/dist/aframe-master.min.js"></script>
+    <script src="./build/aframe-deferred-renderer.min.js"></script>
+  </head>
+  <body>
+    <a-scene deferred-renderer stats>
+      <a-assets>
+        <a-asset-item id="model" src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/obj/walt/WaltHead.obj"></a-asset-item>
+        <a-asset-item id="material" src="https://cdn.rawgit.com/mrdoob/three.js/dev/examples/obj/walt/WaltHead.mtl"></a-asset-item>
+        <a-mixin id="sphere" geometry="primitive:sphere;radius:0.1"></a-mixin>
+        <a-mixin id="redLight" light="type:point;color:#800;distance:10"></a-mixin>
+        <a-mixin id="greenLight" light="type:point;color:#080;distance:10"></a-mixin>
+        <a-mixin id="blueLight" light="type:point;color:#008;distance:10"></a-mixin>
+        <a-mixin id="wall" geometry="primitive:plane;width:50;height:50" material="color:#AAA"></a-mixin>
+      </a-assets>
+
+      <a-entity position="0 5 20">
+      	<a-camera></a-camera>
+      </a-entity>
+
+      <a-obj-model src="#model"
+                   mtl="#material"
+                   scale="0.5 0.5 0.5"
+                   position="0 -10 -30"
+                   rotation="0 0 0"></a-obj-model>
+
+      <a-entity mixin="wall" position="  0 -25   0" rotation="-90   0 0"></a-entity>
+      <a-entity mixin="wall" position="  0  25   0" rotation=" 90   0 0"></a-entity>
+      <a-entity mixin="wall" position="-25   0   0" rotation="  0  90 0"></a-entity>
+      <a-entity mixin="wall" position=" 25   0   0" rotation="  0 -90 0"></a-entity>
+      <a-entity mixin="wall" position="  0   0 -25" rotation="  0   0 0"></a-entity>
+      <a-entity mixin="wall" position="  0   0  25" rotation="  0 180 0"></a-entity>
+
+      <a-entity>
+        <a-animation property="rotation"
+                     from="0 0 0"
+                     to="0 360 0"
+                     dur="5000"
+                     repeat="indefinite"
+                     easing="linear">
+        </a-animation>
+        <a-entity position="20 -20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 -7 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="-20 7 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 20 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="-20 -20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 -7 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="20 7 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 20 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="blueLight"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity>
+        <a-animation property="rotation"
+                     from="0 0 0"
+                     to="360 0 0"
+                     dur="6000"
+                     repeat="indefinite"
+                     easing="linear">
+        </a-animation>
+        <a-entity position="-20 20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="-7 0 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="7 -20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="20 0 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="-20 -20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="-7 0 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="7 20 0">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+        <a-entity position="20 0 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="redLight"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity>
+        <a-animation property="rotation"
+                     from="0 0 0"
+                     to="0 0 360"
+                     dur="7000"
+                     repeat="indefinite"
+                     easing="linear">
+        </a-animation>
+        <a-entity position="0 20 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="-20 0 -7">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 -20 7">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="20 0 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 -20 -20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="20 0 -7">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="0 20 7">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+        <a-entity position="-20 0 20">
+          <a-entity mixin="sphere"></a-entity>
+          <a-entity mixin="greenLight"></a-entity>
+        </a-entity>
+      </a-entity>
+
+      <a-entity light="type:directional;color:#040404" position="-1 1 1"></a-entity>
+    </a-scene>
+  </body>
+</html>

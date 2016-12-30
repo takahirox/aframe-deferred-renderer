@@ -1,0 +1,36 @@
+{
+  "name": "aframe-deferred-renderer",
+  "version": "1.0.0",
+  "description": "A-Frame Deferred Renderer component",
+  "main": "index.js",
+  "scripts": {
+    "all": "npm run build && npm run build-uglify",
+    "build": "webpack index.js build/aframe-deferred-renderer.js",
+    "build-uglify": "webpack -p index.js build/aframe-deferred-renderer.min.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takahirox/aframe-deferred-renderer.git"
+  },
+  "keywords": [
+    "aframe",
+    "aframe-vr",
+    "vr",
+    "three",
+    "threejs",
+    "mozvr",
+    "webvr"
+  ],
+  "author": "Takahiro <hogehoge@gachapin.jp> (https://github.com/takahirox)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/takahirox/aframe-deferred-renderer/issues"
+  },
+  "homepage": "https://github.com/takahirox/aframe-deferred-renderer#readme",
+  "devDependencies": {
+    "aframe": "^0.4.0",
+    "three": "^0.83.0",
+    "webpack": "^1.13.3"
+  }
+}
+

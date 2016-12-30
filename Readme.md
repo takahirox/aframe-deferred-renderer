@@ -1,7 +1,6 @@
 # A-Frame Deferred Renderer component
 
-aframe-deferred-renderer is an A-Frame Deferred Renderer component which enables MMD models to dance.
-
+aframe-deferred-renderer is an A-Frame Deferred Renderer component.
 Deferred Rendering achieves a good performance with many lights.
 
 ![screenshot](./screenshot.png "screenshot")
@@ -12,7 +11,7 @@ Deferred Rendering achieves a good performance with many lights.
 
 | Properties   | type    | Default Value | Description |
 | ------------ | ------- | ------------- | ----------- |
-| lightPrePass l boolean | true          | If true light pre-pass mode is used. Otherwise classic mode is used. |
+| lightPrePass | boolean | true          | If true light pre-pass mode is used. Otherwise classic mode is used. |
 
 ## Browser
 

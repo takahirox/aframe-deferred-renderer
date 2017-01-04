@@ -17,10 +17,10 @@ Deferred Rendering achieves a good performance with many lights.
 
 ### How to use
 
-```
+```html
 <head>
-  <script src="./libs/aframe.min.js"></script>
-  <script src="./build/aframe-deferred-renderer.min.js"></script>
+  <script src="https://cdn.rawgit.com/aframevr/aframe/v0.4.0/dist/aframe-master.min.js"></script>
+  <script src="https://rawgit.com/takahirox/aframe-deferred-renderer/master/build/aframe-deferred-renderer.min.js"></script>
 </head>
 
 <body>

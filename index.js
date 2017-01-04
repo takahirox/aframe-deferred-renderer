@@ -24,6 +24,15 @@ AFRAME.registerComponent('deferred-renderer', {
   },
 
   update: function () {
+    this.setupDeferredRenderer();
+  },
+
+  play: function () {
+    // just in case
+    this.setupDeferredRenderer();
+  },
+
+  setupDeferredRenderer: function () {
     if (this.renderer !== null) { return; }
 
     var data = this.data;
@@ -53,10 +62,5 @@ AFRAME.registerComponent('deferred-renderer', {
     this.renderer = newRenderer;
     sceneEl.renderer = newRenderer;
     sceneEl.effect = new THREE.VREffect(this.renderer);
-  },
-
-  play: function () {
-    // just in case
-    this.update();
   }
 });

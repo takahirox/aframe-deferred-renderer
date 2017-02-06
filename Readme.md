@@ -5,6 +5,10 @@ Deferred Rendering achieves a good performance with many lights.
 
 ![screenshot](./screenshot.png "screenshot")
 
+## Demo
+
+[Demo](https://cdn.rawgit.com/takahirox/aframe-deferred-renderer/v1.0.1/index.html)
+
 ## Properties
 
 ### aframe-deferred-renderer
